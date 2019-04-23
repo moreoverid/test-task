@@ -1,0 +1,18 @@
+{
+    "name": "moreoverid/test-task",
+    "description": "Test task for Profitclicks",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Yury Kozlov",
+            "email": "moreoverid@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Model\\": "model",
+            "Controller\\": "controller"
+        }
+    },
+    "require": {}
+}

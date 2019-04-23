@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>Телефонный справочник</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style="border: 1px cornflowerblue dotted;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#/"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#/">Страница 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#form/">Страница 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div id="content-block"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+<div class="modal fade" id="addPhonesModal" tabindex="-1" role="dialog" aria-labelledby="addPhonesLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPhonesLabel">Добавить телефоны</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="addPhonesModalBody" class="modal-body">
+                <form id="addPhonesForm" onsubmit="return(false)">
+                    <input id="contact_id" type="hidden" name="contact_id" value="">
+                    <div id="number-0"></div>
+                    <button id="btn-phone-add" type="button" class="btn btn-success">+</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                <button id="submitAddPhonesForm" type="button" class="btn btn-primary">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="js/sammy.js"></script>
+<script type="application/javascript" src="js/functions.js"></script>
+
+</body>
+</html>
