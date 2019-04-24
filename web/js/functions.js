@@ -1,6 +1,5 @@
 // page 1
 function getPageOneContacts(sammy) {
-    console.log(sammy);
     var contentBlock = $('#content-block');
     contentBlock.empty();
 
@@ -278,8 +277,6 @@ function processPageTwoForm(sammy) {
         } else { // edit existing contact
             url = '/app/api/editContact';
         }
-
-        console.log(contact_id);
 
         $.ajax({
             type        : 'post',
