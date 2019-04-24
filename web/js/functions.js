@@ -1,5 +1,6 @@
 // page 1
 function getPageOneContacts(sammy) {
+    console.log(sammy);
     var contentBlock = $('#content-block');
     contentBlock.empty();
 
@@ -62,7 +63,7 @@ function getPageOneContacts(sammy) {
                 $('#table-contacts').fadeIn("slow");
             } else {
                 $('#content-block').append(
-                    '<h1>Данных не найдено</h1>' +
+                    '<h3>Данных не найдено</h3>' +
                     '<hr>'
                 );
             }
@@ -308,11 +309,13 @@ $( document ).ready(function() {
             processPageTwoForm(this);
         });
         this.notFound = function(){ // default page
-            getPageOneContacts(this);
-        }
+            $('#content-block').append(
+                '<h3>Запрошенной страницы не найдено.</h3>' +
+                '<hr>'
+            );
+        };
+        // bind other events
+        toggleOtherPageOneEvents(this);
     });
-    app.run();
-
-    // bind other events
-    toggleOtherPageOneEvents(app);
+    app.run('#/');
 });
