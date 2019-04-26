@@ -15,6 +15,30 @@ function getPageOneContacts(sammy) {
         '</div>'
     );
 
+    // Search
+    $('#search-contact').click(function (e) {
+        var query = $('#search-query').val();
+        var res = $('.search-row');
+        var i;
+
+        // hide all items
+        for(i = 0; i < res.length; i++) {
+            res.eq(i).hide();
+        }
+
+        // show items that contains search query
+        for(i = 0; i < res.length; i++) {
+            $('.search-row:contains('+query+')').show();
+        }
+
+        // show all on empty query
+        if (!query) {
+            for(i = 0; i < res.length; i++) {
+                res.eq(i).show();
+            }
+        }
+    });
+
     $.ajax({
         url         : '/app/api/getContacts',
         type        : 'get',
@@ -121,30 +145,6 @@ function getAddPhonesForm() {
 }
 
 function toggleOtherPageOneEvents(sammy) {
-    // Search
-    $('#search-contact').click(function (e) {
-        var query = $('#search-query').val();
-        var res = $('.search-row');
-        var i;
-
-        // hide all items
-        for(i = 0; i < res.length; i++) {
-            res.eq(i).hide();
-        }
-
-        // show items that contains search query
-        for(i = 0; i < res.length; i++) {
-            $('.search-row:contains('+query+')').show();
-        }
-
-        // show all on empty query
-        if (!query) {
-            for(i = 0; i < res.length; i++) {
-                res.eq(i).show();
-            }
-        }
-    });
-
     // add and remove phones in modal window
     $('#btn-phone-add').click(function (e) {
         btnPhoneAddRemove();
@@ -306,10 +306,10 @@ $( document ).ready(function() {
             processPageTwoForm(this);
         });
         this.notFound = function(){ // default page
-            $('#content-block').append(
-                '<h3>Запрошенной страницы не найдено.</h3>' +
-                '<hr>'
-            );
+            // $('#content-block').append(
+            //     '<h3>Запрошенной страницы не найдено.</h3>' +
+            //     '<hr>'
+            // );
         };
         // bind other events
         toggleOtherPageOneEvents(this);
